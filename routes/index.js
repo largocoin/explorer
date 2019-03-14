@@ -121,6 +121,17 @@ function route_get_address(res, hash, count) {
   });
 }
 
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var hDisplay = h > 0 ? h + (" h, ") : "";
+    var mDisplay = m > 0 ? m + (" m, ") : "";
+    var sDisplay = s > 0 ? s + (" s") : "";
+    return hDisplay + mDisplay + sDisplay;
+}
 /* GET home page. */
 router.get('/', function(req, res) {
   route_get_index(res, null);
@@ -296,7 +307,7 @@ router.get('/ext/masternodes', function(req, res) {
                 status: mn.status,
                 lastseen: mn.lastseen,
                 lastpaid: mn.lastpaid,
-                ip: ""
+                activetime: secondsToHms(mn.activetime)
             };
             mnList.push(mnItem);
         }

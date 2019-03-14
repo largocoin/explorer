@@ -5,18 +5,18 @@
 */
 {
   // name your instance!
-  "title": "CIQUIDUS",
+  "title": "LargCoin Explorer",
 
   "address": "127.0.0.1:3001",
 
   // coin name
-  "coin": "Chaincoin",
+  "coin": "LargoCoin",
 
   // coin symbol
-  "symbol": "CHC",
+  "symbol": "LRG",
 
   // logo
-  "logo": "/images/chain_dark-128x128.png",
+  "logo": "images/largo_logo.png",
 
   // favicon
   "favicon": "public/favicon.ico",
@@ -26,15 +26,15 @@
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Slate",
+  "theme": "Cerulean",
 
   // port to listen for requests on.
   "port" : 3001,
 
   // database settings (MongoDB)
   "dbsettings": {
-    "user": "ciquidus",
-    "password": "3xp!0reR",
+    "user": "largo",
+    "password": "wser#ero4-2",
     "database": "explorerdb",
     "address": "localhost",
     "port": 27017
@@ -46,10 +46,10 @@
 
   // wallet settings
   "wallet": {
-    "host": "localhost",
-    "port": 11995,
-    "user": "chaincoinrpc",
-    "pass": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
+    "host": "116.203.47.214",
+    "port": 15821,
+    "user": "usereyrpc",
+    "pass": "fvGRfdvfvdfQ9cp9Edmub7skTH"
   },
 
   // confirmations
@@ -59,34 +59,34 @@
   "locale": "locale/en.json",
 
   // menu settings
+
   "display": {
     "api": true,
-    "markets": true,
+    "markets": false,
     "richlist": true,
     "twitter": true,
     "facebook": false,
     "googleplus": false,
-    "bitcointalk": false,
-    "website": false,
-    "slack": false,
-    "github": false,
     "search": true,
     "movement": true,
-    "network": true
+    "network": true,
+    "masternodes": true,
+    "coininfo": false,
+    "coinmarketcap": false
   },
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
   "index": {
     "show_hashrate": true,
-    "difficulty": "POW",
+    "difficulty": "Hybrid",
     "last_txs": 100
   },
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 1337,
-    "blockhash": "00000000001b8c30360db57b575b3c2bf668b0ed50683f567afd47ae1773efb8",
-    "txhash": "285feead54e322aa69f649c4078766171df358a12f5f1517d61f303780e25511",
+    "blockindex": 1,
+    "blockhash": "00000812e3d4074e06ca53c61403d60185377d76d8b6576609a106f59ffc31cd",
+    "txhash": "681cf70515b1fb7f9ca584b8688ef65c233fef9f8000c599b9f7af1a55402ddc",
     "address": "CaxX1HVWzbQ516w61XbtHR63vNmp2mvLMZ"
   },
 
@@ -94,7 +94,7 @@
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex, coinexchange
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "CHC",
+    "coin": "LRG",
     "exchange": "BTC",
     "enabled": ["cryptopia"],
     "cryptopia_id": "2186",
@@ -114,8 +114,8 @@
   // low flag: greater than this value flagged yellow
   // high flag: greater than this value flagged red
   "movement": {
-    "min_amount": 100,
-    "low_flag": 1000,
+    "min_amount": 0.00000001,
+    "low_flag": 100,
     "high_flag": 5000
   },
 
@@ -123,14 +123,10 @@
   "twitter": "suprnurd",
   "facebook": "yourfacebookpage",
   "googleplus": "yourgooglepluspage",
-  "bitcointalk": "yourbitcointalktopicvalue",
-  "github": "yourgithubusername/yourgithubrepo",
-  "slack": "yourfullslackinviteurl",
-  "website": "yourfullwebsiteurl",
 
   //genesis
-  "genesis_tx": "fa6ef9872494fa9662cf0fecf8c0135a6932e76d7a8764e1155207f3205c7c88",
-  "genesis_block": "00000f639db5734b2b861ef8dbccc33aebd7de44d13de000a12d093bcc866c64",
+  "genesis_tx": "681cf70515b1fb7f9ca584b8688ef65c233fef9f8000c599b9f7af1a55402ddc",
+  "genesis_block": "00000812e3d4074e06ca53c61403d60185377d76d8b6576609a106f59ffc31cd",
 
   //heavy (enable/disable additional heavy features)
   "heavy": false,
@@ -147,7 +143,7 @@
   // HEAVY: retreive from heavys getsupply api call
   // BALANCES : total of all address balances
   // TXOUTSET : retreive from gettxoutsetinfo api call
-  "supply": "TXOUTSET",
+  "supply": "GETINFO",
 
   // how to acquire network hashrate
   // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
@@ -164,7 +160,7 @@
   // type (optional) = class of label, valid types: default, primary, warning, danger, success
   // url (optional) = url to link to for more information
   "labels": {
-  //  "CLkWg5YSLod772uLzsFRxHgHiWVGAJSezm": {"label": "Donation Address", "type":"primary", "url":"http://example.com"},
-  //  "CaxX1HVWzbQ516w61XbtHR63vNmp2mvLMZ": {"label": "Max Lee War Chest"}
+    //  "CLkWg5YSLod772uLzsFRxHgHiWVGAJSezm": {"label": "Donation Address", "type":"primary", "url":"http://example.com"},
+    //  "CaxX1HVWzbQ516w61XbtHR63vNmp2mvLMZ": {"label": "Max Lee War Chest"}
   }
 }

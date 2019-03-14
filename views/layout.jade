@@ -92,7 +92,8 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='/') #{settings.coin}
+          a.navbar-brand(href='/')
+            img(src='#{settings.logo}', style='margin-top:-10px;height:40px;')
         .collapse.navbar-collapse(id='navbar-collapse')
           ul.nav.navbar-nav
             li#home
@@ -104,16 +105,16 @@ html
                 a.navbar-link(href='/reward')
                   span.fa.fa-star
                   span.menu-text #{settings.locale.menu_reward}
+            if settings.display.masternodes == true
+              li#masternodes
+                a.navbar-link.loading(href='/masternodes')
+                  span.fa.fa-server
+                  span.menu-text #{settings.locale.menu_masternodes}
             if settings.display.movement == true
               li#movement
                 a.navbar-link.loading(href='/movement')
                   span.fa.fa-money
                   span.menu-text #{settings.locale.menu_movement}
-            if settings.display.masternodes == true
-              li#masternodes
-                a.navbar-link.loading(href='/masternodes')
-                  span.fa.fa-money
-                  span.menu-text #{settings.locale.menu_masternodes}
             if settings.display.network == true
               li#network
                 a.navbar-link(href='/network')
@@ -259,7 +260,7 @@ html
         ul.nav
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='margin-top:15px;')
-              a.navbar-link(href='https://github.com/suprnurd/ciquidus', target='_blank') Ciquidus Alpha
+              a.navbar-link(href='https://github.com/largocoin/explorer', target='_blank') Powered by Largo Team
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -

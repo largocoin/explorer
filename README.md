@@ -1,13 +1,13 @@
-Ciquidus Alpha - 1.7.2
+LargoCoin explorer - 1.0.0
 ================
 
-The Chaincoin block explorer.
+The LargoCoin block explorer.
 
-This project is a fork of [Iquidus Explorer](https://github.com/iquidus/explorer) so massive thanks go out to Luke Williams for his code! Thank you!!!
+This project is a fork of [Ciquidus Explorer](https://github.com/suprnurd/ciquidus) so massive thanks go out to Luke Williams and Alan Rudolf for their code! Thank you guys!!!
 
 ### See it in action
 
-*  [explorer.chaincoin.org](https://explorer.chaincoin.org)
+*  [exp.largocoin.org](https://exp.largocoin.org)
 
 
 ### Requires
@@ -28,15 +28,15 @@ Create databse:
 
 Create user with read/write access:
 
-    > db.createUser( { user: "ciquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+    > db.createUser( { user: "largo", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 
 *note: If you're using mongo shell 2.4.x, use the following to create your user:
 
-    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+    > db.addUser( { user: "largo", pwd: "password", roles: [ "readWrite"] })
 
 ### Get the source
 
-    git clone https://github.com/suprnurd/ciquidus explorer
+    git clone https://github.com/largocoin/explorer
 
 ### Install node modules
 
@@ -98,14 +98,9 @@ forcesync.sh and forcesynclatest.sh (located in scripts/) can be used to force t
 
 ### Wallet
 
-The wallet connected to Ciquidus must be running with atleast the following flags:
+The wallet connected to Largo explorer must be running with atleast the following flags:
 
     -daemon -txindex
-
-### Donate
-    
-    CHC: CLkWg5YSLod772uLzsFRxHgHiWVGAJSezm
-    BTC: 1J8Chi5teDJrvBtSuQhioNCHfTNBCcCrPx
 
 ### Known Issues
 
@@ -135,7 +130,8 @@ Where [SIZE] is an integer higher than the default.
 
 ### License
 
-Copyright (c) 2017, The Chaincoin Community  
+Copyright (c) 2019, The Largo Team
+Copyright (c) 2017, The Alan Rudolf  
 Copyright (c) 2015, Iquidus Technology  
 Copyright (c) 2015, Luke Williams  
 All rights reserved.

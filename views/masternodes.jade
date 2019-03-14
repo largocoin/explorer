@@ -33,14 +33,14 @@ block content
           { data: 'status', width: '15%' },
           { data: 'lastseen', width:'25%' },
           { data: 'lastpaid', width:'25%' },
-          { data: 'ip', width: '10%', className: 'text-right' }
+          { data: 'activetime', width: '10%', className: 'text-right' }
         ]
       });
     });
   .col-md-12(style="margin-bottom: 4%")
     .panel.panel-default
       .panel-heading
-        strong #{settings.locale.net_connections}
+        strong #{settings.locale.masternodes}
       table#masternodes-table.table.table-bordered.table-striped
         thead
           tr
@@ -48,5 +48,5 @@ block content
             th.text-center #{settings.locale.mn_status}
             th.text-center #{settings.locale.mn_lastseen}
             th.text-center #{settings.locale.mn_lastpaid}
-            th.text-right #{settings.locale.mn_ip}
+            th.text-right #{settings.locale.mn_activetime}
         tbody.text-center

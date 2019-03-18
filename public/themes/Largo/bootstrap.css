@@ -4811,11 +4811,13 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-default .navbar-link {
-    color: #ffffff
+    /*styled*/
+    color: #2c344c
 }
 
 .navbar-default .navbar-link:hover {
-    color: #ffffff
+    /*styled*/
+    color: #2c344c
 }
 
 .navbar-default .btn-link {

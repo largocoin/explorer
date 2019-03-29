@@ -43,7 +43,12 @@ body {
 }
 
 .panel-address-summary {
- margin-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.info-tooltip {
+	margin: 0 5px;
+	cursor: help;
 }
 
 /* datatable tweaks */

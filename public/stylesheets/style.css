@@ -51,6 +51,11 @@ body {
 	cursor: help;
 }
 
+/* info hint size */
+.tippy-popper .tippy-content {
+	font-size: 1.5em;
+}
+
 /* datatable tweaks */
 table {
 	width: 100% !important;

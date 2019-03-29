@@ -28,12 +28,12 @@ block content
             if settings.show_sent_received == true
               th
                 span #{settings.locale.total_sent} (#{settings.symbol})
-                span.fa.fas.fa-question-circle.fa-lg.info-tooltip(data-tippy='#{settings.locale.total_sent_hint}')
+                span.fa.fas.fa-question-circle.info-tooltip(data-tippy='#{settings.locale.total_sent_hint}')
             if address.a_id !== 'coinbase'
               if settings.show_sent_received == true
                 th
                   span #{settings.locale.total_received} (#{settings.symbol})
-                  span.fa.fas.fa-question-circle.fa-lg.info-tooltip(data-tippy='#{settings.locale.total_received_hint}')
+                  span.fa.fas.fa-question-circle.info-tooltip(data-tippy='#{settings.locale.total_received_hint}')
               th #{settings.locale.rl_balance} (#{settings.symbol})
         tbody             
           tr

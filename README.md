@@ -7,7 +7,7 @@ This project is a fork of [Ciquidus Explorer](https://github.com/suprnurd/ciquid
 
 ### See it in action
 
-*  [exp.largocoin.org](https://exp.largocoin.org)
+*  [block.largocoin.io](https://block.largocoin.io)
 
 
 ### Requires

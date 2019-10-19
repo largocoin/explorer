@@ -131,6 +131,7 @@ Where [SIZE] is an integer higher than the default.
 ### License
 
 Copyright (c) 2019, The Largo Team
+
 Copyright (c) 2017, The Alan Rudolf  
 Copyright (c) 2015, Iquidus Technology  
 Copyright (c) 2015, Luke Williams  

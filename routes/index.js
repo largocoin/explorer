@@ -355,4 +355,42 @@ router.get('/ext/summary', function(req, res) {
     });
   });
 });
+router.get('/ext/getadrstxes/:adr1/:adr2', function(req, res) {
+  var adr1 = req.param('adr1');
+  var adr2 = req.param('adr2');
+  db.get_tx_between_addresses(adr1, adr2, function (ab, ba) {
+
+    var ab_txes = [];
+    var ba_txes = [];
+    for(var key in ab){
+      var ab_tx = ab[key];
+      for(var vout_key in ab_tx.vout){
+        var vout = ab_tx.vout[vout_key];
+        if(vout.addresses === adr2){
+          ab_txes.push({
+            tx_id: ab_tx.txid,
+            timestamp: ab_tx.timestamp,
+            amount: vout.amount
+          })
+        }
+      }
+    }
+
+    for(var key in ba){
+      var ba_tx = ba[key];
+      for(var vout_key in ba_tx.vout){
+        var vout = ba_tx.vout[vout_key];
+        if(vout.addresses === adr1){
+          ba_txes.push({
+            tx_id: ba_tx.txid,
+            timestamp: ba_tx.timestamp,
+            amount: vout.amount
+          })
+        }
+      }
+    }
+
+    res.send({ data: {a: adr1, b: adr2, ab: ab_txes, ba: ba_txes }});
+  });
+});
 module.exports = router;

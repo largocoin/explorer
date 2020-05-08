@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  - var time = !!tx.timestamp ? format_unixtime(tx.timestamp) : "---";
+  - var time = !!tx.timestamp ? format_unixtime(tx.timestamp) : "-";
   .col-xs-12.col-md-10.col-md-offset-1
     .well.well-sm.hidden-lg.hidden-md(style='word-wrap:break-word;')
       | #{tx.txid}
@@ -35,9 +35,10 @@ block content
                 td.hidden-xs  
                   a(href='/block/'+tx.blockhash+'') #{tx.blockhash}
                 td #{time}
-                td.view_tx  
-                  a(href='/block/'+tx.blockhash+'')
-                    span.glyphicon.glyphicon-eye-open 
+                td.view_tx
+                  if !!tx.blockhash && tx.blockhash !== '-'
+                    a(href='/block/'+tx.blockhash+'')
+                      span.glyphicon.glyphicon-eye-open
             else
               tr.warning
                 td #{confirms}
@@ -45,8 +46,10 @@ block content
                   a(href='/block/'+tx.blockhash+'') #{tx.blockhash}
                 td #{time}
                 td.view_tx  
-                  a(href='/block/'+tx.blockhash+'')
-                    span.glyphicon.glyphicon-eye-open
+                  if !!tx.blockhash && tx.blockhash !== '-'
+                    a(href='/block/'+tx.blockhash+'')
+                      span.glyphicon.glyphicon-eye-open
+
     if tx.vout.length < 1
       .alert.alert-info(role='alert', style='text-align:center;')   
         strong #{settings.locale.tx_nonstandard}

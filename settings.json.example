@@ -94,14 +94,11 @@
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex, coinexchange
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "LRG",
-    "exchange": "BTC",
-    "enabled": ["cryptopia"],
-    "cryptopia_id": "2186",
-    "ccex_key" : "Get-Your-Own-Key",
-    "coinexchange_id": "18",
-    "default": "cryptopia"
-  },
+      "coin": "LRG",
+      "exchange": "USDT",
+      "enabled": ["coineal"],
+      "default": "coineal"
+    },
 
   // richlist/top100 settings
   "richlist": {

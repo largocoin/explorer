@@ -124,7 +124,7 @@ function route_get_address(res, hash, count) {
 function route_get_addrtxes(res, hash, from, to) {
   db.get_address(hash, function(address) {
     if (address) {
-      db.get_address_txes(hash, function (vin, vout) {
+      db.get_address_txes(hash, function (t) {
         var txes = [];
 
         if (!from) from = 0;
@@ -133,20 +133,11 @@ function route_get_addrtxes(res, hash, from, to) {
         from *= 100000000;
         to *= 100000000;
 
-        for (let key in vin) {
-          let vin_tx = vin[key];
-          db.is_tx_amount_in_range(vin_tx, hash, from, to, function (result) {
+        for (let key in t) {
+          let tx = t[key];
+          db.is_tx_amount_in_range(tx, hash, from, to, function (result) {
             if(result === 1){
-              txes.push(vin_tx);
-            }
-          });
-        }
-
-        for (let key in vout) {
-          let vout_tx = vout[key];
-          db.is_tx_amount_in_range(vout_tx, hash, from, to, function (result) {
-            if(result === 1){
-              txes.push(vout_tx);
+              txes.push(tx);
             }
           });
         }

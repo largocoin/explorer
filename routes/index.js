@@ -430,4 +430,40 @@ router.get('/ext/getadrstxes/:adr1/:adr2', function(req, res) {
     res.send({ data: {a: adr1, b: adr2, ab: ab_txes, ba: ba_txes }});
   });
 });
+router.get('/ext/getadrvin/:adr', function(req, res) {
+  let adr = req.param('adr');
+  db.get_stats(settings.coin, function (stats) {
+    db.get_address_vin_txes(adr, function(vin_txes){
+      let txes = [];
+
+      for(let key in vin_txes){
+        let tx = vin_txes[key];
+        let vins = [];
+        for(let vin_key in tx.vin){
+          let vin = tx.vin[vin_key];
+          vins.push(vin.addresses)
+        }
+        if(vins.length === 0){
+          continue;
+        }
+        for(let tx_key in tx.vout){
+          let vout = tx.vout[tx_key];
+          if(vout.addresses === adr) {
+            txes.push({
+              tx_id: tx.txid,
+              timestamp: tx.timestamp,
+              addr: vins,
+              amount: vout.amount,
+              height: tx.blockindex,
+              is_confirmed: (stats.last - tx.blockindex >= settings.confirmations)
+            })
+          }
+        }
+      }
+
+      res.send({ data: {address: adr, txes: txes }});
+    });
+  })
+
+});
 module.exports = router;
